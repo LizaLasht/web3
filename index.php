@@ -28,7 +28,7 @@
     <label><input type="radio" name="limbs"> 4 </label><br/>
     <label>
         Сверхспособности:<br/>
-    <select name="field-name-2" multiple="multiple">
+    <select name="field-name-2[]" multiple="multiple">
     <option value="Value 1">Бессмертие</option>
     <option value="Value 2">Прохождение сквозь стены</option>
     <option value="Value 3">Левитация</option> </select>
