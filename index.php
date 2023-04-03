@@ -15,17 +15,27 @@
         email:<br/>
     <input name="email" type="email" placeholder="Введите email">
     </label><br/>
-        Дата рождения:<br/>
-      <label><input name="year" type="date" value="2003-07-29">
+      
+      
+        Год рождения:<br/>
+      <label><select id="year" name="year">
+    <?php 
+    for ($i = 1922; $i <= 2022; $i++) {
+      printf('<option value="%d">%d год</option>', $i, $i);
+    }
+    ?>
+  </select>
      </label><br/>
+      
+      
         Пол:<br/>
     <label><input type="radio" name="gender" value='w'> Женщина </label> 
     <label><input type="radio" name="gender" value='m'> Мужчина  
     </label><br/>
         Количество конечностей :<br/>
-    <label><input type="radio" name="limbs"> 2 </label> 
-    <label><input type="radio" name="limbs"> 3 </label> 
-    <label><input type="radio" name="limbs"> 4 </label><br/>
+    <label><input type="radio" name="limbs" value="2"> 2 </label> 
+    <label><input type="radio" name="limbs" value="3"> 3 </label> 
+    <label><input type="radio" name="limbs" value="4"> 4 </label><br/>
     <label>
         Сверхспособности:<br/>
     <select name="field-name-2[]" multiple="multiple">
