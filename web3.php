@@ -60,8 +60,8 @@ $pass = '8438991';
 $db = new PDO('mysql:host=localhost;dbname=u52812', $user, $pass, [PDO::ATTR_PERSISTENT => true]); 
 
 try {
-    $stmt = $db->prepare("INSERT INTO person (name, email, year, gender, limbs, bio) VALUES (:name, :email, :year, :gender, :limbs, :bio);");
-    $stmtErr=$stmt -> execute(['name'=>$_POST['name'],  'email' => $_POST['email'], 'year'=>$_POST['year'], 'gender'=> $_POST['gender'], 'limbs'=> $_POST['limbs'],'bio'=>$_POST['bio'] ]);
+    $stmt = $db->prepare("INSERT INTO person (name, email, year, gender, limbs, bio) VALUES (?, ?, ?, ?, ?, ?);");
+    $stmtErr=$stmt -> execute([$_POST['name'], $_POST['email'], $_POST['year'], $_POST['gender'], $_POST['limbs'], $_POST['bio']]);
     $strId = $db -> lastInsertId();
     
     if (isset($_POST['field-name-2'])) {
